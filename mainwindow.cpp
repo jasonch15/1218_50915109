@@ -24,7 +24,7 @@ void MainWindow::saveToFile()
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("Text Files (*.txt);;All Files (*)"));
 
     if (fileName.isEmpty()) {
-        return; // User canceled the save dialog
+        return; 
     }
 
     QFile file(fileName);
@@ -34,7 +34,7 @@ void MainWindow::saveToFile()
     }
 
     QTextStream out(&file);
-    out << ui->textEdit->toPlainText(); // Save the content of textEdit
+    out << ui->textEdit->toPlainText(); 
     file.close();
 
     QMessageBox::information(this, tr("Success"), tr("File saved successfully!"));
